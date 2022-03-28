@@ -9,6 +9,4 @@ services:
       - ../mysite:/mysite
     ports:
       - 8881:8881
-    entrypoint:
-      - PYTHONUNBUFFERED=1
     command: python manage.py runserver 0.0.0.0:8881
