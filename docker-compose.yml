@@ -14,9 +14,6 @@ services:
 #      - PYTHONUNBUFFERED=1
 #    command: python manage.py runserver 0.0.0.0:8881
   gcpdjango:
-    build:
-      context: .
-      dockerfile: Dockerfile
     tty: true
     volumes:
       - ./mysite:/mysite
