@@ -1,5 +1,5 @@
 services:
-  gcp_django:
+  gcpdjango:
     build:
       context: .
       dockerfile: Dockerfile
