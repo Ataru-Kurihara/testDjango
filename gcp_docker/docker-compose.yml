@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     tty: true
     volumes:
-      - ../mysite:/mysite
+      - ../mysite:/mysite2
     ports:
       - 8881:8881
     entrypoint:
