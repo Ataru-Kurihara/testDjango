@@ -16,7 +16,7 @@ services:
   gcpdjango:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./Dockerfile
     tty: true
     volumes:
       - ./mysite:/mysite
