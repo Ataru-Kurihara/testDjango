@@ -57,9 +57,15 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
 
-def test(request):
+def my_cp_txt(request):
     files = glob.glob("/minecraft/computer/*[!lastid.txt']", recursive=True)
     files_json = json.dumps(files, ensure_ascii=False, indent=2)
     print(files)
     # return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
     return HttpResponse(files_json)
+
+
+def cp_txt(request):
+    files = glob.glob("/server5/world/computer/*[!lastid.txt]", recursive=True)
+    file_json = json.dumps(files, ensure_ascii=False, indent=2)
+    return HttpResponse(file_json)
