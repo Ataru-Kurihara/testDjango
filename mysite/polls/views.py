@@ -58,7 +58,7 @@ def vote(request, question_id):
 
 
 def my_cp_txt(request):
-    files = glob.glob("/minecraft/computer/*[!lastid.txt']", recursive=True)
+    files = glob.glob("../ユーザー/ataru/AppData/Roaming/.minecraft/versions/1.8.9-forge1.8.9-11.15.1.1722/saves/test/computer/*[!lastid.txt']", recursive=True)
     files_json = json.dumps(files, ensure_ascii=False, indent=2)
     print(files)
     # return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
