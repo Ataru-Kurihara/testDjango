@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     tty: true
     volumes:
-      - ../mysite:/mysite
+      - framework/mysite:/mysite
     ports:
       - 8881:8881
-    command: python
+    command: python manage.py runserver 0.0.0.0:8881

@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\gcp_docker\docker-compose.yml">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\mysite\polls\templates\polls\detail.html">
           <value>
             <Attribute>
