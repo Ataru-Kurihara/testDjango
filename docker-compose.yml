@@ -20,6 +20,8 @@ services:
     tty: true
     volumes:
       - ./mysite:/mysite
+      - C:/Users/ataru/AppData/Roaming/.minecraft/versions/1.8.9-forge1.8.9-11.15.1.1722/saves/test:/minecraft
+
     ports:
       - 8881:8881
     environment:

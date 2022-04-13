@@ -1,7 +1,10 @@
+import os
 import pathlib
 
 from django.http import HttpResponseRedirect, HttpResponse
-from .models import Choice, Question
+from rest_framework.views import APIView
+
+from ..models import Choice, Question
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views import generic
@@ -57,12 +60,24 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
 
-def my_cp_txt(request):
-    files = glob.glob("../ユーザー/ataru/AppData/Roaming/.minecraft/versions/1.8.9-forge1.8.9-11.15.1.1722/saves/test/computer/*[!lastid.txt']", recursive=True)
-    files_json = json.dumps(files, ensure_ascii=False, indent=2)
-    print(files)
-    # return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
-    return HttpResponse(files_json)
+# http://localhost:8881/my_cp_txt/0/
+
+
+class project(APIView):
+
+    def get(self, request, *args, **kargs):
+        files = glob.glob("/minecraft/computer/*[!lastid.txt]", recursive=True)
+        files_json = json.dumps(files, ensure_ascii=False, indent=2)
+        print(files)
+        return HttpResponse(files_json)
+
+
+class project_id(APIView):
+
+    def get(self, request, *args, **kargs):
+        project_id = kargs['id']
+
+        return HttpResponse(project_id)
 
 
 def cp_txt(request):
